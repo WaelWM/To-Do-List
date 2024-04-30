@@ -11,8 +11,26 @@
     <header>
 
         <h1>Daily To-Do-List</h1>
+        <form id="newTaskForm"></form>
+        <input type="text" name="taskInput" id="newTaskInput" placeholder="Write up the task for today!">
+        <input type="submit" name="AddInput" id="newTaskAdd" value="Add Task">
+
             
     </header>
-    
+
+    <main>
+        <section class="taskList">
+            <h2>Today's Tasks:</h2>
+            <div id="tasks">
+
+                <div class="tasks">
+                    <div class="content">
+                        <input type="text" class="text" value="Task" readonly/>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
 </body>
 </html>
