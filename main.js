@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
     const list_el = document.querySelector("#tasks");
     let tasks = [];
 
+    // Load tasks from localStorage when the page is loaded
     if (localStorage.getItem('tasks')) {
         tasks = JSON.parse(localStorage.getItem('tasks'));
         tasks.forEach(taskText => {
@@ -44,6 +45,25 @@ window.addEventListener('load', () => {
                 }
                 task_el.remove();
             }
+        } else if (e.target.classList.contains('edit')) {
+            const task_el = e.target.closest('.task');
+            const task_input_el = task_el.querySelector('.text');
+            if (e.target.innerText.toLowerCase() === "edit") {
+                e.target.innerText = "Save";
+                task_input_el.removeAttribute("readonly");
+                task_input_el.focus();
+            } else {
+                e.target.innerText = "Edit";
+                task_input_el.setAttribute("readonly", "readonly");
+
+                // Get the index of the task being edited
+                const index = Array.from(list_el.children).indexOf(task_el);
+                if (index !== -1) {
+                    // Update the task in the tasks array
+                    tasks[index] = task_input_el.value;
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                }
+            }
         }
     });
 
@@ -63,11 +83,16 @@ window.addEventListener('load', () => {
         const task_actions_el = document.createElement('div');
         task_actions_el.classList.add('actions');
 
+        const task_edit_el = document.createElement('button');
+        task_edit_el.classList.add('edit');
+        task_edit_el.innerText = 'Edit';
+
         const task_delete_el = document.createElement('button');
         task_delete_el.classList.add('delete');
         task_delete_el.innerText = 'Delete';
 
         task_content_el.appendChild(task_input_el);
+        task_actions_el.appendChild(task_edit_el);
         task_actions_el.appendChild(task_delete_el);
         task_el.appendChild(task_content_el);
         task_el.appendChild(task_actions_el);
