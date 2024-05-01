@@ -4,7 +4,7 @@
 	--darkest: #111827;
 	--grey: #6B7280;
 	--red: #550101;
-	--purple: #010002;
+	--black: #010002;
 	--light: #EEE;
 }
 
@@ -72,7 +72,7 @@ input, button {
 	color: var(--red);
 	font-size: 1.30rem;
 	font-weight: 700;
-	background-image: linear-gradient(to right, var(--red), var(--purple));
+	background-image: linear-gradient(to right, var(--red), var(--black));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	cursor: pointer;
@@ -140,6 +140,7 @@ main {
 	margin: 0 0.5rem;
 	font-size: 1.125rem;
 	font-weight: 700;
+	text-transform: uppercase;
 	transition: 0.4s;
 }
 
@@ -152,8 +153,7 @@ main {
 }
 
 .task .actions .edit {
-
-	color: rgb(0, 0, 0);
+	background-color: var(--grey);
 }
 
 .task .actions .delete {
