@@ -153,7 +153,7 @@ main {
 }
 
 .task .actions .edit {
-	background-color: var(--grey);
+	color: rgb(0, 0, 0);
 }
 
 .task .actions .delete {

@@ -4,7 +4,6 @@ window.addEventListener('load', () => {
     const list_el = document.querySelector("#tasks");
     let tasks = [];
 
-    // Load tasks from localStorage when the page is loaded
     if (localStorage.getItem('tasks')) {
         tasks = JSON.parse(localStorage.getItem('tasks'));
         tasks.forEach(taskText => {
@@ -56,10 +55,8 @@ window.addEventListener('load', () => {
                 e.target.innerText = "Edit";
                 task_input_el.setAttribute("readonly", "readonly");
 
-                // Get the index of the task being edited
                 const index = Array.from(list_el.children).indexOf(task_el);
                 if (index !== -1) {
-                    // Update the task in the tasks array
                     tasks[index] = task_input_el.value;
                     localStorage.setItem('tasks', JSON.stringify(tasks));
                 }
