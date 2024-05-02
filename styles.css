@@ -18,6 +18,7 @@
 body {
 	display: flex;
 	flex-direction: column;
+	align-content: center;
 	min-height: 100vh;
 	color: #FFF;
 	background-color: var(--dark);
@@ -39,12 +40,13 @@ header h1{
 
 #mainText{
 
-    padding-left: 28%;
+	text-align: center;
 
 }
 
 #new-task-form {
 	display: flex;
+	align-content: center;
 }
 
 input, button {
@@ -55,8 +57,7 @@ input, button {
 }
 
 #new-task-input {
-    text-align: center;
-	flex: 1 1 0%;
+	flex: content;
 	background-color: var(--darker);
 	padding: 0.5rem;
 	border-radius: 1rem;
@@ -67,6 +68,7 @@ input, button {
 
 #new-task-input::placeholder {
 	color: var(--grey);
+	text-align: center;
 }
 
 #new-task-submit {
@@ -97,6 +99,7 @@ main {
 
 .task-list {
 	padding: 1rem;
+	text-align: center;
 }
 
 .task-list h2 {
