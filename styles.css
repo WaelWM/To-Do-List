@@ -6,6 +6,7 @@
 	--red: #550101;
 	--black: #010002;
 	--light: #EEE;
+	--green: #027315;
 }
 
 * {
@@ -127,7 +128,7 @@ main {
 }
 
 .task .content .text:not(:read-only) {
-	color: var(--red);
+	color: var(--green);
 }
 
 .task .actions {
@@ -140,7 +141,6 @@ main {
 	margin: 0 0.5rem;
 	font-size: 1.125rem;
 	font-weight: 700;
-	text-transform: uppercase;
 	transition: 0.4s;
 }
 
@@ -153,9 +153,9 @@ main {
 }
 
 .task .actions .edit {
-	color: rgb(0, 0, 0);
+	color: rgb(63, 4, 114);
 }
 
 .task .actions .delete {
-	color: rgb(0, 0, 0);
+	color: rgb(167, 19, 19);
 }
