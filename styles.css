@@ -72,12 +72,9 @@ input, button {
 }
 
 #new-task-submit {
-	color: var(--red);
+	color: rgb(16, 93, 16);
 	font-size: 1.30rem;
 	font-weight: 700;
-	background-image: linear-gradient(to right, var(--red), var(--black));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 	cursor: pointer;
 	transition: 0.4s;
 }
